@@ -5,7 +5,7 @@
 
 >Para clonar el archivo 
 
-git clone https://github.com/nontoa/Calculadora-Vectores-Matrices-CNYT.git
+git clone https://github.com/nontoa/Clasico-Cuantico-CNYT.git
 >
 ### Prerrequisitos
 * Maven
@@ -24,9 +24,9 @@ Un número complejo, es una entidad matemática que viene dada por un par de nú
 
 ## Ejercicios:
 
-* **1. Los experimentos de la canicas con coeficiente booleanos
-* **2. Experimentos de las múltiples rendijas clásico probabilístico, con más de dos rendijas.
-* **3. Experimento de las múltiples rendijas cuántico.
+* 1. Los experimentos de la canicas con coeficiente booleanos
+* 2. Experimentos de las múltiples rendijas clásico probabilístico, con más de dos rendijas.
+* 3. Experimento de las múltiples rendijas cuántico.
 
 ## Autor
 
