@@ -166,5 +166,29 @@ public class AppTest
         
         
     }
+    
+    
+    public void testExperimentoProbabilidadEnUnPuntoEnParticular() {
+        App s = new App();
+        System.out.println("Experimento 4.1.1: ");
+        Complejo[][] k = new Complejo[4][1];
+        k[0][0] = new Complejo (-3,-1);
+        k[1][0] = new Complejo (0,-2);
+        k[2][0] = new Complejo (0,1);
+        k[3][0] = new Complejo (2,0);        
+
+        Complejo[][] p = new Complejo[4][1];
+        p[0][0] = new Complejo (0.5263157894736842,0);
+        p[1][0] = new Complejo (0.21052631578947364,0);
+        p[2][0] = new Complejo (0.05263157894736841,0);
+        p[3][0] = new Complejo (0.21052631578947364,0);        
+
+        System.out.println("Vector ket");
+        System.out.println(k);
+        int punto = 2;
+        
+        assertEquals(p[punto][0].getReal(), s.probabilidadPuntoX(punto, k));
+    }
     **/
+
 }
