@@ -1,5 +1,6 @@
 package edu.escuelaing.arep.app;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -14,8 +15,18 @@ public class App
         System.out.println( "Hello World!" );
     }
     **/
+    public static DecimalFormat round = new DecimalFormat("#.00");
     
     
+    /**
+     * Este metodo permite simular los experimentos de la canicas con coeficiente booleanos.
+     * @param matriz Matriz inicial.
+     * @param vector Vector inicial.
+     * @param n Dimension de la matriz.
+     * @param m Dimension de la matriz.
+     * @param clicks Numero de clicks.
+     * @return  Retorna un ArrayList con el vector resultante.
+     */
     public static ArrayList<Integer> canicas (Integer[][] matriz,ArrayList<Integer> vector , int n , int m, int clicks){
         for(int x=0;x<clicks;x++){
             ArrayList<Integer> respuesta = new ArrayList<Integer>();
@@ -28,17 +39,27 @@ public class App
             }
             vector=respuesta;
         }
+        
         return vector;
     }
     
-    public static ArrayList<Integer> rendija(int rendijas, int blancos, int clicks,ArrayList<Integer> vector){
+    
+    /**
+     * Este metodo permite simular experimentos de las múltiples rendijas clásico probabilístico, con más de dos rendijas.
+     * @param rendijas Numero de rendijas.
+     * @param blancos Numero de blancos.
+     * @param clicks Numero de clicks.
+     * @param vector Vector inicial.
+     * @return  Retorna un ArrayList con el vector resultante.
+     */
+    public static ArrayList<Integer> rendija(int rendijas, int blancos, int clicks ,ArrayList<Integer> vector){
         int n= vector.size();
         Integer[][] matriz = new Integer[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++) matriz[i][j]=0;        
         }
         int bT= blancos * rendijas - (rendijas - 1);
-        int cont = -1;
+        int cont = n -1;
 
         for(int x=1;x<(rendijas+1);x++){
             matriz[x][0]=1/rendijas;        
@@ -55,13 +76,26 @@ public class App
             }
             ini+=blancos-1;
         }
+        ArrayList<Integer> res = canicas(matriz,vector,n,n,clicks);
+        for(Integer i : res){
+            System.out.println(i);
+        }
         return canicas(matriz,vector,n,n,clicks);
     }
     
+    /**
+     * 
+     * @param n Numero de clicks
+     * @param matriz Matriz inicial.
+     * @param vector Vector inicial.
+     * @param x Dimension de la matriz.
+     * @param y Dimension de la matriz.
+     * @return Retorna un ArrayList con el vector resultante.
+     */
     public static Complejo[] rendijaCompleja(int n, Complejo[][] matriz, Complejo[] vector,int x, int y){
         for(int i=0;i<n;i++){
             vector = accionMatrizVector(matriz,vector,x,y);
-        }
+        }        
         return vector;
     }
     
@@ -113,6 +147,8 @@ public class App
         return new Complejo(c1.getReal() + c2.getReal(), c1.getImag() + c2.getImag());
     }
 
+    
+    
     
     
 }
