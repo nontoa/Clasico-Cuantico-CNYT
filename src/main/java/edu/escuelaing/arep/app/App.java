@@ -8,10 +8,12 @@ import java.util.ArrayList;
  */
 public class App 
 {
+    /**
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
     }
+    **/
     
     
     public static ArrayList<Integer> canicas (Integer[][] matriz,ArrayList<Integer> vector , int n , int m, int clicks){
@@ -55,6 +57,64 @@ public class App
         }
         return canicas(matriz,vector,n,n,clicks);
     }
+    
+    public static Complejo[] rendijaCompleja(int n, Complejo[][] matriz, Complejo[] vector,int x, int y){
+        for(int i=0;i<n;i++){
+            vector = accionMatrizVector(matriz,vector,x,y);
+        }
+        return vector;
+    }
+    
+    /**
+     * Este metodo se encarga de la multiplicacion de una matriz por un vector.
+     * @param mat Matriz inicial.
+     * @param vec Vector inicial.
+     * @param x Numero de filas.
+     * @param y Numero de columnas.
+     * @return Retorna el vector resultante de la multiplicacion.
+     */
+    public static Complejo[] accionMatrizVector(Complejo[][] mat, Complejo[] vec, int x, int y) {
+        Complejo[] res = new Complejo[x];
+        Complejo suma;
+        for (int i = 0; i < x; i++) {
+            suma = new Complejo(0, 0);
+            for (int j = 0; j < y; j++) {
+                suma = sumarComplejos(suma, multiplicacionComplejos(mat[i][j], vec[j]));
+            }
+            res[i] = suma;
+
+        }        
+        return res;
+
+    }
+    
+    /**
+     * Este metodo se encarga de la multiplicacion de dos complejos.
+     *
+     * @param c1 Primer complejo.
+     * @param c2 Segundo complejo.
+     * @return Retorna la multiplicacion de los complejos.
+     */
+    public static Complejo multiplicacionComplejos(Complejo c1, Complejo c2) {
+        double x = c1.real * c2.real - c1.imag * c2.imag;
+        double y = c1.real * c2.imag + c1.imag * c2.real;
+        return (new Complejo(x, y));
+
+    }
+    
+    /**
+     * Este metodo se encarga de la suma de complejos.
+     *
+     * @param c1 Primer complejo.
+     * @param c2 Segundo comolejo.
+     * @return Retorna la suma de los complejos.
+     */
+    public static Complejo sumarComplejos(Complejo c1, Complejo c2) {
+        return new Complejo(c1.getReal() + c2.getReal(), c1.getImag() + c2.getImag());
+    }
+
+    
+    
 }
 
 
