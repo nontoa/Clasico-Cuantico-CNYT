@@ -144,7 +144,12 @@ public class App
         return new Complejo(c1.getReal() + c2.getReal(), c1.getImag() + c2.getImag());
     }
     
-    
+    /**
+     * Este metodo permite calcular la probabilidad de encontrarlo en una posicion en especifico.
+     * @param ket Es el ket inicial.
+     * @param pos La posicion.
+     * @return La probabilidad.
+     */
     public static Double prob (Complejo[] ket, int pos){
         double c = (ket[pos].getReal()*ket[pos].getReal())+(ket[pos].getImag()*ket[pos].getImag());
         double norma = 0;
@@ -154,6 +159,12 @@ public class App
         return ((c/norma)*100);
     }
     
+    /**
+     * El sistema si se le da otro vector Ket debe buscar la probabilidad de transitar del primer vector al segundo.
+     * @param si Vector complejo inicial.
+     * @param fi Vector complejo inicial.
+     * @return 
+     */
     public static Complejo amplitud(Complejo[] si, Complejo[] fi){
         Complejo[] bra = new Complejo[si.length];
         Complejo res = new Complejo(0,0);
