@@ -1,4 +1,4 @@
-# Programa simulación de lo clásico a lo cuántico
+# De lo clásico a lo cuántico y Teoría Quántica
 
 
 ## Empezando
@@ -22,11 +22,17 @@ git clone https://github.com/nontoa/Clasico-Cuantico-CNYT.git
 
 Un número complejo, es una entidad matemática que viene dada por un par de números reales, el primero x se denomina la parte real y al segundo y la parte imaginaria. Los números complejos se representa por un par de números entre paréntesis (x, y), como los puntos del plano, o bien, en la forma usual de x+yi, i se denomina la unidad imaginaria, la raíz cuadrada de menos uno.
 
-## Ejercicios:
+## Programa simulación de lo clásico a lo cuántico:
 
 * 1. Los experimentos de la canicas con coeficiente booleanos
 * 2. Experimentos de las múltiples rendijas clásico probabilístico, con más de dos rendijas.
 * 3. Experimento de las múltiples rendijas cuántico.
+
+## Sistema cuántico de partícula en una línea:
+
+* 1. El sistema debe calcular la probabilidad de encontrarlo en una posición en particular.
+
+* 2. El sistema si se le da otro vector Ket debe buscar la probabilidad de transitar del primer vector al segundo.
 
 ## Autor
 
