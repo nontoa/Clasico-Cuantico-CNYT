@@ -40,155 +40,307 @@ public class AppTest
      */
     public void testCanicas()
     {
-        int n =4;
-        int m =4;
-        Integer[][] matriz = new Integer [n][m];
-        ArrayList<Integer> vector = new ArrayList<Integer>();
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        int n =8;
+        int m =8;
+        Double[][] matriz = new Double [n][m];
+        ArrayList<Double> vector = new ArrayList<Double>();
+        ArrayList<Double> res = new ArrayList<Double>();        
         int clicks =5;
-        matriz[0][0]=1;
-        matriz[0][1]=0;
-        matriz[0][2]=0;
-        matriz[0][3]=1;
-        matriz[1][0]=0;
-        matriz[1][1]=1;
-        matriz[1][2]=1;
-        matriz[1][3]=0;
-        matriz[2][0]=0;
-        matriz[2][1]=0;
-        matriz[2][2]=0;
-        matriz[2][3]=1;
-        matriz[3][0]=1;
-        matriz[3][1]=0;
-        matriz[3][2]=0;
-        matriz[3][3]=0;
-        vector.add(1);
-        vector.add(0);
-        vector.add(1);
-        vector.add(1);
-        res =  App.canicas(matriz,vector,n,m,clicks);
-        assertEquals((Integer)13, res.get(0));
-        assertEquals((Integer)8, res.get(1));
-        assertEquals((Integer)5, res.get(2));
-        assertEquals((Integer)8, res.get(3));
         
-    }
-    
-    public void testCanicas2()
-    {
-        int n =4;
-        int m =4;
-        Integer[][] matriz = new Integer [n][m];
-        ArrayList<Integer> vector = new ArrayList<Integer>();
-        ArrayList<Integer> res = new ArrayList<Integer>();
-        int clicks =5;
-        matriz[0][0]=0;
-        matriz[0][1]=0;
-        matriz[0][2]=0;
-        matriz[0][3]=1;
-        matriz[1][0]=0;
-        matriz[1][1]=1;
-        matriz[1][2]=0;
-        matriz[1][3]=0;
-        matriz[2][0]=1;
-        matriz[2][1]=1;
-        matriz[2][2]=1;
-        matriz[2][3]=1;
-        matriz[3][0]=0;
-        matriz[3][1]=0;
-        matriz[3][2]=0;
-        matriz[3][3]=0;
-        vector.add(0);
-        vector.add(0);
-        vector.add(1);
-        vector.add(1);
-        res =  App.canicas(matriz,vector,n,m,clicks);
-        assertEquals((Integer)0, res.get(0));
-        assertEquals((Integer)0, res.get(1));
-        assertEquals((Integer)3, res.get(2));
-        assertEquals((Integer)0, res.get(3));
+        matriz[0][0]=0.0;
+        matriz[0][1]=0.0;
+        matriz[0][2]=0.0;
+        matriz[0][3]=0.0;
+        matriz[0][4]=0.0;
+        matriz[0][5]=0.0;
+        matriz[0][6]=0.0;
+        matriz[0][7]=0.0;
         
-    }
+        matriz[1][0]=0.5;
+        matriz[1][1]=0.0;
+        matriz[1][2]=0.0;
+        matriz[1][3]=0.0;
+        matriz[1][4]=0.0;
+        matriz[1][5]=0.0;
+        matriz[1][6]=0.0;
+        matriz[1][7]=0.0;
+        
+        matriz[2][0]=0.5;
+        matriz[2][1]=0.0;
+        matriz[2][2]=0.0;
+        matriz[2][3]=0.0;
+        matriz[2][4]=0.0;
+        matriz[2][5]=0.0;
+        matriz[2][6]=0.0;
+        matriz[2][7]=0.0;
+        
+        matriz[3][0]=0.0;
+        matriz[3][1]=0.33;
+        matriz[3][2]=0.0;
+        matriz[3][3]=1.0;
+        matriz[3][4]=0.0;
+        matriz[3][5]=0.0;
+        matriz[3][6]=0.0;
+        matriz[3][7]=0.0;
+        
+        matriz[4][0]=0.0;
+        matriz[4][1]=0.33;
+        matriz[4][2]=0.0;
+        matriz[4][3]=0.0;
+        matriz[4][4]=1.0;
+        matriz[4][5]=0.0;
+        matriz[4][6]=0.0;
+        matriz[4][7]=0.0;
+        
+        matriz[5][0]=0.0;
+        matriz[5][1]=0.33;
+        matriz[5][2]=0.33;
+        matriz[5][3]=0.0;
+        matriz[5][4]=0.0;
+        matriz[5][5]=1.0;
+        matriz[5][6]=0.0;
+        matriz[5][7]=0.0;
+        
+        matriz[6][0]=0.0;
+        matriz[6][1]=0.0;
+        matriz[6][2]=0.33;
+        matriz[6][3]=0.0;
+        matriz[6][4]=0.0;
+        matriz[6][5]=0.0;
+        matriz[6][6]=1.0;
+        matriz[6][7]=0.0;
+       
+        matriz[7][0]=0.0;
+        matriz[7][1]=0.0;
+        matriz[7][2]=0.33;
+        matriz[7][3]=0.0;
+        matriz[7][4]=0.0;
+        matriz[7][5]=0.0;
+        matriz[7][6]=0.0;
+        matriz[7][7]=1.0;
+       
+        vector.add(1.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);               
+        
+        res =  App.canicas(matriz,vector,n,m,clicks);                
+        
+        System.out.println(round.format(res.get(0)));
+        
+        assertEquals(round.format(res.get(0)),",00");
+        assertEquals(round.format(res.get(1)),",00");
+        assertEquals(round.format(res.get(2)),",00");
+        assertEquals(round.format(res.get(3)),",17");
+        assertEquals(round.format(res.get(4)),",17");
+        assertEquals(round.format(res.get(5)),",33");
+        assertEquals(round.format(res.get(6)),",17");
+        assertEquals(round.format(res.get(7)),",17");
+        
+    }        
+        
     
-    /**
     public void testRendijas(){
         int rendijas=2;
-        int blancos=4;
-        int clicks =8;
-        ArrayList<Integer> vector = new ArrayList<Integer>();
-        ArrayList<Integer> respuesta = new ArrayList<Integer>();
-        vector.add(1);
-        vector.add(5);
-        vector.add(7);
-        vector.add(4);
-        vector.add(9);
-        vector.add(12);
-        respuesta = App.rendija(rendijas, blancos, clicks, vector);
+        int blancos=3;
+        int clicks =2;
+        ArrayList<Double> vector = new ArrayList<Double>();
+        ArrayList<Double> res = new ArrayList<Double>();        
+        
+        vector.add(1.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);
+        vector.add(0.0);                
+        
+        res = App.rendija(rendijas, blancos, clicks, vector);
+        
+        assertEquals(round.format(res.get(0)),",00");
+        assertEquals(round.format(res.get(1)),",00");
+        assertEquals(round.format(res.get(2)),",00");
+        assertEquals(round.format(res.get(3)),",17");
+        assertEquals(round.format(res.get(4)),",17");
+        assertEquals(round.format(res.get(5)),",33");
+        assertEquals(round.format(res.get(6)),",17");
+        assertEquals(round.format(res.get(7)),",17");
+                
         
     }
+    
     
     public void testRendijaCompleja(){
-        int n = 5;
-        int x = 4;
-        int y = 4;
+        int n = 2;
+        int x = 8;
+        int y = 8;
         Complejo[][] matriz = new Complejo [x][y];
         Complejo[] vector = new Complejo[x];
-        matriz[0][0]=new Complejo(2,-2);
-        matriz[0][1]=new Complejo(4,3);
-        matriz[0][2]=new Complejo(6,-1);
-        matriz[0][3]=new Complejo(0,4);
-        matriz[1][0]=new Complejo(6,8);
-        matriz[1][1]=new Complejo(1,24);
-        matriz[1][2]=new Complejo(12,11);
-        matriz[1][3]=new Complejo(-9,3);
-        matriz[2][0]=new Complejo(-3,-4);
-        matriz[2][1]=new Complejo(7,8);
-        matriz[2][2]=new Complejo(-8,-2);
-        matriz[2][3]=new Complejo(1,1);
-        matriz[3][0]=new Complejo(4,-8);
-        matriz[3][1]=new Complejo(14,3);
-        matriz[3][2]=new Complejo(3,12);
-        matriz[3][3]=new Complejo(20,-14);
-        vector[0]= new Complejo(2,-15);
-        vector[1]= new Complejo(4,8);
-        vector[2]= new Complejo(3,7);
-        vector[3]= new Complejo(5,-6);
-        Complejo[] respuesta = App.rendijaCompleja(n, matriz, vector, x, y);
-        assertEquals("36681070,00",round.format(respuesta[0].getReal()));
-        assertEquals("6979769,00",round.format(respuesta[0].getImag()));
-        assertEquals("80208330,00",round.format(respuesta[1].getReal()));
-        assertEquals("173171343,00",round.format(respuesta[1].getImag()));
-        assertEquals("35377079,00",round.format(respuesta[2].getReal()));
-        assertEquals("52595275,00",round.format(respuesta[2].getImag()));
-        assertEquals("100674468,00",round.format(respuesta[3].getReal()));
-        assertEquals("52864453,00",round.format(respuesta[3].getImag()));
         
+        matriz[0][0]=new Complejo(0,0);
+        matriz[0][1]=new Complejo(0,0);
+        matriz[0][2]=new Complejo(0,0);
+        matriz[0][3]=new Complejo(0,0);
+        matriz[0][4]=new Complejo(0,0);
+        matriz[0][5]=new Complejo(0,0);
+        matriz[0][6]=new Complejo(0,0);
+        matriz[0][7]=new Complejo(0,0);
         
+        matriz[1][0]=new Complejo(0.5,0);
+        matriz[1][1]=new Complejo(0,0);
+        matriz[1][2]=new Complejo(0,0);
+        matriz[1][3]=new Complejo(0,0);
+        matriz[1][4]=new Complejo(0,0);
+        matriz[1][5]=new Complejo(0,0);
+        matriz[1][6]=new Complejo(0,0);
+        matriz[1][7]=new Complejo(0,0);
+        
+        matriz[2][0]=new Complejo(0.5,0);
+        matriz[2][1]=new Complejo(0,0);
+        matriz[2][2]=new Complejo(0,0);
+        matriz[2][3]=new Complejo(0,0);
+        matriz[2][4]=new Complejo(0,0);
+        matriz[2][5]=new Complejo(0,0);
+        matriz[2][6]=new Complejo(0,0);
+        matriz[2][7]=new Complejo(0,0);
+        
+        matriz[3][0]=new Complejo(0,0);
+        matriz[3][1]=new Complejo(0.33,0);
+        matriz[3][2]=new Complejo(0,0);
+        matriz[3][3]=new Complejo(1,0);
+        matriz[3][4]=new Complejo(0,0);
+        matriz[3][5]=new Complejo(0,0);
+        matriz[3][6]=new Complejo(0,0);
+        matriz[3][7]=new Complejo(0,0);
+       
+        matriz[4][0]=new Complejo(0,0);
+        matriz[4][1]=new Complejo(0.33,0);
+        matriz[4][2]=new Complejo(0,0);
+        matriz[4][3]=new Complejo(0,0);
+        matriz[4][4]=new Complejo(1,0);
+        matriz[4][5]=new Complejo(0,0);
+        matriz[4][6]=new Complejo(0,0);
+        matriz[4][7]=new Complejo(0,0);
+        
+        matriz[5][0]=new Complejo(0,0);
+        matriz[5][1]=new Complejo(0.33,0);
+        matriz[5][2]=new Complejo(0.33,0);
+        matriz[5][3]=new Complejo(0,0);
+        matriz[5][4]=new Complejo(0,0);
+        matriz[5][5]=new Complejo(1,0);
+        matriz[5][6]=new Complejo(0,0);
+        matriz[5][7]=new Complejo(0,0);
+        
+        matriz[6][0]=new Complejo(0,0);
+        matriz[6][1]=new Complejo(0,0);
+        matriz[6][2]=new Complejo(0.33,0);
+        matriz[6][3]=new Complejo(0,0);
+        matriz[6][4]=new Complejo(0,0);
+        matriz[6][5]=new Complejo(0,0);
+        matriz[6][6]=new Complejo(1,0);
+        matriz[6][7]=new Complejo(0,0);
+        
+        matriz[7][0]=new Complejo(0,0);
+        matriz[7][1]=new Complejo(0,0);
+        matriz[7][2]=new Complejo(0.33,0);
+        matriz[7][3]=new Complejo(0,0);
+        matriz[7][4]=new Complejo(0,0);
+        matriz[7][5]=new Complejo(0,0);
+        matriz[7][6]=new Complejo(0,0);
+        matriz[7][7]=new Complejo(1,0);
+       
+        
+        vector[0]= new Complejo(1,0);
+        vector[1]= new Complejo(0,0);
+        vector[2]= new Complejo(0,0);
+        vector[3]= new Complejo(0,0);
+        vector[4]= new Complejo(0,0);
+        vector[5]= new Complejo(0,0);
+        vector[6]= new Complejo(0,0);
+        vector[7]= new Complejo(0,0);
+        
+        Complejo[] respuesta = App.rendijaCompleja(n, matriz, vector, x, y);                
+        
+        assertEquals(",00",round.format(respuesta[0].getReal()));
+        assertEquals(",00",round.format(respuesta[0].getImag()));
+        assertEquals(",00",round.format(respuesta[1].getReal()));
+        assertEquals(",00",round.format(respuesta[1].getImag()));
+        assertEquals(",00",round.format(respuesta[2].getReal()));
+        assertEquals(",00",round.format(respuesta[2].getImag()));
+        assertEquals(",17",round.format(respuesta[3].getReal()));
+        assertEquals(",00",round.format(respuesta[3].getImag()));
+        assertEquals(",17",round.format(respuesta[4].getReal()));
+        assertEquals(",00",round.format(respuesta[4].getImag()));
+        assertEquals(",33",round.format(respuesta[5].getReal()));
+        assertEquals(",00",round.format(respuesta[5].getImag()));
+        assertEquals(",17",round.format(respuesta[6].getReal()));
+        assertEquals(",00",round.format(respuesta[6].getImag()));
+        assertEquals(",17",round.format(respuesta[7].getReal()));
+        assertEquals(",00",round.format(respuesta[7].getImag()));
+                        
+    }
+    
+    public void testProb(){
+        Complejo[] ket = new Complejo[10];
+        int pos = 7;
+        Double res=0.0; 
+        
+        ket[0]= new Complejo(2,1);
+        ket[1]= new Complejo(-1,2);
+        ket[2]= new Complejo(0,1);
+        ket[3]= new Complejo(1,0);
+        ket[4]= new Complejo(3,-1);
+        ket[5]= new Complejo(2,0);
+        ket[6]= new Complejo(0,-2);
+        ket[7]= new Complejo(-2,1);
+        ket[8]= new Complejo(1,-3);
+        ket[9]= new Complejo(0,-1);
+        
+        res= App.prob(ket, pos);
+        
+        assertEquals(round.format(res),"10,87");
         
     }
     
-    
-    public void testExperimentoProbabilidadEnUnPuntoEnParticular() {
-        App s = new App();
-        System.out.println("Experimento 4.1.1: ");
-        Complejo[][] k = new Complejo[4][1];
-        k[0][0] = new Complejo (-3,-1);
-        k[1][0] = new Complejo (0,-2);
-        k[2][0] = new Complejo (0,1);
-        k[3][0] = new Complejo (2,0);        
-
-        Complejo[][] p = new Complejo[4][1];
-        p[0][0] = new Complejo (0.5263157894736842,0);
-        p[1][0] = new Complejo (0.21052631578947364,0);
-        p[2][0] = new Complejo (0.05263157894736841,0);
-        p[3][0] = new Complejo (0.21052631578947364,0);        
-
-        System.out.println("Vector ket");
-        System.out.println(k);
-        int punto = 2;
+    public void testAmplitud(){                
         
-        assertEquals(p[punto][0].getReal(), s.probabilidadPuntoX(punto, k));
+        Complejo[] si = new Complejo[10];
+        Complejo[] fi = new Complejo[10];                
+        
+        si[0]= new Complejo(2,1);
+        si[1]= new Complejo(-1,2);
+        si[2]= new Complejo(0,1);
+        si[3]= new Complejo(1,0);
+        si[4]= new Complejo(3,-1);
+        si[5]= new Complejo(2,0);
+        si[6]= new Complejo(0,-2);
+        si[7]= new Complejo(-2,1);
+        si[8]= new Complejo(1,-3);
+        si[9]= new Complejo(0,-1);
+        
+        fi[0]= new Complejo(-1,-4);
+        fi[1]= new Complejo(2,-3);
+        fi[2]= new Complejo(-7,6);
+        fi[3]= new Complejo(-1,1);
+        fi[4]= new Complejo(-5,-3);
+        fi[5]= new Complejo(5,0);
+        fi[6]= new Complejo(5,8);
+        fi[7]= new Complejo(4,-4);
+        fi[8]= new Complejo(8,-7);
+        fi[9]= new Complejo(2,-7);
+        
+        Complejo res = App.amplitud(si, fi);
+        
+        assertEquals(round.format(res.getReal()),"-3,00");
+        assertEquals(round.format(res.getImag()),"-19,00");
+        
+        
     }
-    **/
+        
 
 }
