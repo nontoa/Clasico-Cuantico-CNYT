@@ -5,8 +5,8 @@
 
 >Para clonar el archivo 
 
-git clone https://github.com/nontoa/Clasico-Cuantico-CNYT.git
->
+>git clone https://github.com/nontoa/Clasico-Cuantico-CNYT.git
+
 ### Prerrequisitos
 * Maven
 * Java
@@ -33,6 +33,13 @@ Un número complejo, es una entidad matemática que viene dada por un par de nú
 * 1. El sistema debe calcular la probabilidad de encontrarlo en una posición en particular.
 
 * 2. El sistema si se le da otro vector Ket debe buscar la probabilidad de transitar del primer vector al segundo.
+
+## Pruebas:
+
+Para correr las pruebas despues de clonar el proyecto ejecutar el sigiente comando:
+
+>mvn test
+
 
 ## Autor
 
