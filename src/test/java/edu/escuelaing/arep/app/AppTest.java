@@ -129,8 +129,7 @@ public class AppTest
         vector.add(0.0);               
         
         res =  App.canicas(matriz,vector,n,m,clicks);                
-        
-        System.out.println(round.format(res.get(0)));
+                
         
         assertEquals(round.format(res.get(0)),",00");
         assertEquals(round.format(res.get(1)),",00");
