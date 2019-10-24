@@ -155,6 +155,55 @@ Un número complejo, es una entidad matemática que viene dada por un par de nú
     }
 ```
 
+## Teoria Cuantica Basica:
+
+* 1. Sistema de la posición de la partícula en una recta.
+
+```java
+/**
+     * Este metodo se encarga de hallar la probabilidad de que una particula
+     * este en una posicion especifica.
+     *
+     * @param posPosibles Son las posiciones a ocupar.
+     * @param ket Es el ket inicial.
+     * @param x
+     * @return Retorna la probabilidad.
+     */
+    public double probabilidadPosPart(int posPosibles, Complejo[] ket, int x) {
+        double normaKet = normaKet(ket);
+        double probabilidad = Math.pow(modulo(ket[x]), 2) / Math.pow(normaKet, 2);
+        return probabilidad;
+    }
+```
+
+* 2. El sistema revisa que la matriz sea hermitiana, y si lo es, calcula la media y la varianza del observable en el estado dado.
+
+```java
+/**
+     * Este metodo se encarga de hallar la media de un observable.
+     *
+     * @param m Matriz inicial.
+     * @param ket Vector inicial.
+     * @return Retorna la media del observable.
+     */
+    public Complejo mediaDeUnObservableVector(Complejo[][] m, Complejo[] ket) {
+        Complejo[] accion = accion(m, ket);
+        Complejo media = productoInterno(accion, ket);
+        return media;
+    }
+    
+    public Complejo varianzaDeUnOperador(Complejo[][] m, Complejo[] ket) {
+
+        Complejo[][] mediaObservable = MultiplicacionEscalar(mediaDeUnObservableVector(m, ket), identidadMat(m.length));
+        Complejo[][] Observable = sumaMatrices(m, inversaMatriz(mediaObservable));
+        Complejo[][] Observable2 = multM(Observable, Observable);
+        Complejo varianza = productoInterno(accion(Observable2, ket), ket);
+        return varianza;
+    }
+```
+
+* 3. El sistema calcula los valores propios del observable y la probabilidad de que el sistema transite a alguno de los vectores propios después de la observación.
+
 ## Pruebas:
 
 Para correr las pruebas despues de clonar el proyecto ejecutar el sigiente comando:
