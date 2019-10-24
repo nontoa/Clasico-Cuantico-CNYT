@@ -445,20 +445,6 @@ public class App {
         return ansV;
 
     }
-
-    /**
-     * 
-     * @param times
-     * @param ket
-     * @param s
-     * @return 
-     */
-    public Complejo[] dinamica(int times, Complejo[] ket, List<Complejo[][]> s) {
-        Complejo[] EstadoF = ket;
-        for (int i = 0; i < times; i++) {
-            EstadoF = accion(s.get(i), EstadoF);
-        }
-        return EstadoF;
-    }
+        
 
 }
